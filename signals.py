@@ -2,9 +2,9 @@ import logging
 import django.dispatch
 
 """
-Arquivo de definição dos sinais.
+Arquivo de definicao dos sinais.
 
-Os sinais são usados para interligar diferentes *apps* do Django. 
+Os sinais sao usados para interligar diferentes *apps* do Django. 
 """
 
 def get_subclasses(classes, level=0):

@@ -15,9 +15,9 @@ import subprocess
 import logging
 
 """
-Modelos da aplicação Django. 
+Modelos da aplicacao Django. 
 
-Neste arquivo são definidos os modelos de dados da aplicação *gitannex*.
+Neste arquivo sao definidos os modelos de dados da aplicacao *gitannex*.
 """
 
 logger = logging.getLogger(__name__)
@@ -154,7 +154,7 @@ def gitMMediaPostSave(instance, **kwargs):
         gitCommit(instance.title, instance.author.username, instance.author.email, os.path.dirname(instance.fileref.path))
 
 def runScheduledJobs():
-    """Executa as operações programadas em todos os repositorios. """
+    """Executa as operacoes programadas em todos os repositorios. """
     allRep = GitAnnexRepository.objects.all()
     for rep in allRep:
         if rep.enableSync:
@@ -169,8 +169,8 @@ class GitAnnexRepository(models.Model):
     Atributos:
         repositoryName: nome do repositorio (campo preenchido por *_getAvailableFolders()*)
         repositoryURLOrPath: apontador ao repositorio no disco ou em rede
-        syncStartTime = orario de inicio da sincronização
-        enableSync = flag booleano para abilitar ou disabilitar a sincronização
+        syncStartTime = orario de inicio da sincronizacao
+        enableSync = flag booleano para abilitar ou disabilitar a sincronizacao
         remoteRepositoryURLOrPath = apontador ao repositorio de origem 
     """
   
