@@ -1,11 +1,19 @@
 import logging
 import django.dispatch
 
+"""
+Arquivo de definição dos sinais.
+
+Os sinais são usados para interligar diferentes *apps* do Django. 
+"""
+
 def get_subclasses(classes, level=0):
     """
-        Return the list of all subclasses given class (or list of classes) has.
-        Inspired by this question:
-        http://stackoverflow.com/questions/3862310/how-can-i-find-all-subclasses-of-a-given-class-in-python
+    Procura as subclasses da uma classe dada, retorna a lista de subclasses.
+
+    Return the list of all subclasses given class (or list of classes) has.
+    Inspired by this question:
+    http://stackoverflow.com/questions/3862310/how-can-i-find-all-subclasses-of-a-given-class-in-python
     """
     # for convenience, only one class can can be accepted as argument
     # converting to list if this is the case
@@ -20,6 +28,8 @@ def get_subclasses(classes, level=0):
 
 def receiver_subclasses(signal, sender, dispatch_uid_prefix, **kwargs):
     """
+    Decorador para conectar todos os sinais do *receiver* e das subclasses do *receiver*.
+
     A decorator for connecting receivers and all receiver's subclasses to signals. Used by passing in the
     signal and keyword arguments to connect::
 
@@ -36,5 +46,5 @@ def receiver_subclasses(signal, sender, dispatch_uid_prefix, **kwargs):
     return _decorator
 
 
-## Signal to all that the files are synced 
+## Novo sinal para alertar que os repositorios sao sincronizados
 filesync_done = django.dispatch.Signal(providing_args=["repositoryName", "repositoryDir"])
