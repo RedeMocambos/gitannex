@@ -10,10 +10,13 @@
 ______/~~~\________________________________________________________________ _ _ _
 
        /
-      GITANNEX
+      GITANNEX                                      Software LIVRE! GPLv3
 
-Aplicação django para gerir repositorios Git Annex (git-annex.branchable.com) 
+Aplicacao django para gerir repositorios Git Annex (git-annex.branchable.com)
+
 
 Pode usar com o django mmedia:
-https://github.com/20/mmedia
+https://github.com/RedeMocambos/mmedia
+
+
 
